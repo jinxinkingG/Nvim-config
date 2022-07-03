@@ -7,5 +7,9 @@ M.hop= {
     ["<leader>hl"] = {"<cmd>HopLine<CR>","Hop Line"}
   }
 }
+M.dapui{
+  n = {
+  }
+}
 
 return M

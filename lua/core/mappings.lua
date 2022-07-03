@@ -42,7 +42,7 @@ M.general = {
       ["<leader>rn"] = { "<cmd> set rnu! <CR>", "   toggle relative number" },
 
       -- update nvchad
-      ["<leader>uu"] = { "<cmd> :NvChadUpdate <CR>", "  update nvchad" },
+      -- ["<leader>uu"] = { "<cmd> :NvChadUpdate <CR>", "  update nvchad" },
 
       ["<leader>tt"] = {
          function()
@@ -69,8 +69,8 @@ M.tabufline = {
       ["<S-Tab>"] = { "<cmd> Tbufprev <CR> ", "  goto prev buffer" },
 
       -- cycle through tabs
-      ["<leader>tp"] = { "<cmd> tabprevious <CR>", "  goto next tab" },
-      ["<leader>tn"] = { "<cmd> tabnext <CR> ", "  goto prev tab" },
+      -- ["<leader>tp"] = { "<cmd> tabprevious <CR>", "  goto next tab" },
+      -- ["<leader>tn"] = { "<cmd> tabnext <CR> ", "  goto prev tab" },
 
       -- close buffer + hide terminal buffer
       ["<leader>x"] = {
@@ -142,12 +142,12 @@ M.lspconfig = {
          "   lsp signature_help",
       },
 
-      ["<leader>D"] = {
-         function()
-            vim.lsp.buf.type_definition()
-         end,
-         "   lsp definition type",
-      },
+      -- ["<leader>D"] = {
+         -- function()
+            -- vim.lsp.buf.type_definition()
+         -- end,
+         -- "   lsp definition type",
+      -- },
 
       ["<leader>ra"] = {
          function()
@@ -256,7 +256,7 @@ M.telescope = {
       ["<leader>gt"] = { "<cmd> Telescope git_status <CR>", "  git status" },
 
       -- pick a hidden term
-      ["<leader>pt"] = { "<cmd> Telescope terms <CR>", "   pick hidden term" },
+      ["<leader>ce"] = { "<cmd> Telescope terms <CR>", "   pick hidden term" },
 
       -- theme switcher
       ["<leader>th"] = { "<cmd> Telescope themes <CR>", "   nvchad themes" },
@@ -350,7 +350,7 @@ M.whichkey = {
 
 M.blankline = {
    n = {
-      ["<leader>bc"] = {
+      ["<leader>b"] = {
          function()
             local ok, start = require("indent_blankline.utils").get_current_context(
                vim.g.indent_blankline_context_patterns,
@@ -366,6 +366,22 @@ M.blankline = {
          "  Jump to current_context",
       },
    },
+}
+M.dapui = {
+  n = {
+    ["<leader>d"] = {
+      "⚙ DapUI"
+    },
+    ["<leader>do"] = {
+      "<cmd>lua require('dapui).open()<CR>","⚙ dapUI open"
+    },
+    ["<leader>dc"] = {
+      "<cmd>lua require('dapui).close()<CR>","⚙ dapUI close"
+    },
+    ["<leader>dt"] = {
+      "<cmd>lua require('dapui).toggle()<CR>","⚙ dapUI toggle"
+    }
+  }
 }
 
 return M
